@@ -11,8 +11,8 @@ It's way of designing the behavior of the Collaborators of CUT, which will help 
 2) Mock Frameworks => Used to isolate the CUT from its Collaborators (like mocking the database or network socket connection Collaborators from the CUT). So that we can focus on testing the CUT.  
 
 ### Properties of Interaction Based Testing  
-It should be simple and focused.(to test only on that method)  
-Readable and Maintainable as the code base grows test cases are the only part to verify the existing codes. Tests shouldn't have flow / control statements.  
+1) It should be simple and focused.(to test only on that method)  
+2) Readable and Maintainable as the code base grows test cases are the only part to verify the existing codes. Tests shouldn't have flow / control statements.  
 
 ### Don't of Interaction Based Testing
 1) Don't mock the Value objects as typically it don't have behaviors. If we have a case of mocking the Value objects we should consider refactor the code.  
@@ -36,6 +36,13 @@ Large Community
 Simple & Elegant  
 Easy to setup  
 
+-----------------------------------------------------------------------
+All the codes from original Author. Only test cases are implemented newly.
+#### Project Description
+Reading a CSV file in BookDAO class using Utils class for file reading.
+
+### Basic method Stubbing
+Mocking the Utils class in BookDAO.java in the UtilsTest.java.
 
 
 
