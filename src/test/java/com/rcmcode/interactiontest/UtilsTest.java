@@ -3,21 +3,19 @@ package com.rcmcode.interactiontest;
 import com.rcmcode.interactiontest.dao.BookDAO;
 import com.rcmcode.interactiontest.model.Book;
 import com.rcmcode.interactiontest.model.Topic;
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.omg.SendingContext.RunTime;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.nio.file.Path;
 import java.time.Year;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
@@ -25,11 +23,17 @@ import static org.mockito.Mockito.when;
 
 class UtilsTest {
 
+    @Mock
+    private Utils utils;
+
+    @BeforeEach
+    void setup() {
+        MockitoAnnotations.openMocks(this);
+    }
+
     /* Basic STUB method created */
     @Test
     void testStubMethod() {
-        final Utils utils = mock(Utils.class);
-
         //Hard coded behavior
         List<Book> expect = Arrays.asList(new Book[] {
                 new Book("Effective Java", 280,
@@ -43,8 +47,6 @@ class UtilsTest {
     /* Basic STUB method created with Exception handling */
     @Test
     void testStubbingOfException() {
-        final Utils utils = mock(Utils.class);
-
         //Hard coded behavior
         when(utils.getBook(any(String.class))).thenThrow(RuntimeException.class);
 
