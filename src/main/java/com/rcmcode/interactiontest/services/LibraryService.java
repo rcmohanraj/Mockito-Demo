@@ -20,6 +20,7 @@ public class LibraryService {
             throw new IllegalArgumentException("id must be a positive integer");
         }
         return this.dao.fetchBookById(id) != null;
+        //return false;
     }
 
 
