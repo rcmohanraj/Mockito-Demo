@@ -27,7 +27,7 @@ class UtilsTest {
 
     /* Basic STUB method created */
     @Test
-    void testSTUBMethod() {
+    void testStubMethod() {
         final Utils utils = mock(Utils.class);
 
         //Hard coded behavior
